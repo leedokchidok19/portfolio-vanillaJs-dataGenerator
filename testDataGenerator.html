@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL-TestDataGenerator</title>
+    <style>
+        .container{
+            display: flex;
+            flex-flow: column;
+        }
+        .navigation{
+            width: 100%;
+            border-bottom: 1px solid black;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+        }
+        .section{
+            margin-top: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navigation">
+            <h1><b>TestDataGenerator</b></h1>
+        </nav>
+        <section class="section">
+            <div id="content">
+                <!--input column-->
+            </div>
+            <button onclick="result();">결과</button>
+            <div id="result">
+                <!--input result-->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onload = function() {
+            input_column();
+        }
+        function input_column(){
+            var content = document.getElementById('content');
+            var set_column = 3;
+            
+            for(var i=0;i<set_column;i++){
+                var input_tag   =   '<div id='+i+' class="columns">'
+                                +       '<input type="text" id=i'+i+'>'
+                                +   '</div>';
+                content.innerHTML  += input_tag;
+            }
+        }
+        function result(){
+            console.log('d');
+            var inputs = document.getElementsByClassName('columns');
+            var result_tag = document.getElementById('result');
+            var result = '';
+
+            for(var i=0;i<inputs.length;i++){
+                var input_id = 'i'+i;
+                var input_value = document.getElementById(input_id).value;
+                result += input_value;
+            }
+            console.log(result);
+            result_tag.innerHTML += result;
+        }
+    </script>
+
+</body>
+</html>
