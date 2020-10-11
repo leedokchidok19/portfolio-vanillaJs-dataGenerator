@@ -12,28 +12,49 @@
             <h1><b>TestDataGenerator</b></h1>
         </nav>
         <section class="section">
-           <div class="setting">
-               <div class="db" style="display: none">
-                   <select id="db">
-                       <option value="oracle">Oracle</option>
-                       <option value="mysql">MySQL</option>
-                       <option value="maria">Maria</option>
-                   </select>
-               </div>
-               <div class="query">
-                   <select id="query">
-                       <option value="i">insert</option>
-                       <!--
-                       <option value="u">update</option>
-                       <option value="d">delete</option>
-                       -->
-                   </select>
-               </div>
-               <div class="table">
-                   <input type="text" id="table_name" placeholder="tabe name">
-               </div>
-           </div>
+            <div class="setting">
+                <div id="add_btn">
+                    <span>Add</span>
+                    <input type="text" id="add_input" value="1" maxlength="3">
+                    <button class="add_rows">row(s)</button>
+                </div>
+                <div class="db" style="display: none">
+                    <select id="db">
+                        <option value="oracle">Oracle</option>
+                        <option value="mysql">MySQL</option>
+                        <option value="maria">Maria</option>
+                    </select>
+                </div>
+                <div class="query">
+                    <select id="query">
+                        <option value="i">insert</option>
+                        <!--
+                        <option value="u">update</option>
+                        <option value="d">delete</option>
+                        -->
+                    </select>
+                </div>
+                <div class="table">
+                    <input type="text" id="table_name" placeholder="tabe name">
+                </div>
+            </div>
             <div id="content">
+                <table border="1px solid black">
+                    <thead>
+                        <tr>
+                            <td>order</td>
+                            <td>column name</td>
+                            <td>column type</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td><input type="text" id="column_1" placeholder="column name"></td>
+                            <td><select id="type_1"><option value="name">name</option></select></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <!--input column-->
             </div>
             <button onclick="result();">result</button>
