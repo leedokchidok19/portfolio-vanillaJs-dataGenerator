@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-flow: column;
+}
+.navigation{
+    width: 100%;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+}
+.section{
+    margin-top: 1.25rem;
+}

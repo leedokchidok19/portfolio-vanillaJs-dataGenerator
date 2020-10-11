@@ -3,23 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SQL-TestDataGenerator</title>
-    <style>
-        .container{
-            display: flex;
-            flex-flow: column;
-        }
-        .navigation{
-            width: 100%;
-            border-bottom: 1px solid black;
-            box-sizing: border-box;
-        }
-        h1{
-            text-align: center;
-        }
-        .section{
-            margin-top: 1.25rem;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
 </head>
 <body>
 
@@ -28,11 +12,32 @@
             <h1><b>TestDataGenerator</b></h1>
         </nav>
         <section class="section">
+           <div class="setting">
+               <div class="db" style="display: none">
+                   <select id="db">
+                       <option value="oracle">Oracle</option>
+                       <option value="mysql">MySQL</option>
+                       <option value="maria">Maria</option>
+                   </select>
+               </div>
+               <div class="query">
+                   <select id="query">
+                       <option value="i">insert</option>
+                       <!--
+                       <option value="u">update</option>
+                       <option value="d">delete</option>
+                       -->
+                   </select>
+               </div>
+               <div class="table">
+                   <input type="text" id="table_name" placeholder="tabe name">
+               </div>
+           </div>
             <div id="content">
                 <!--input column-->
             </div>
-            <button onclick="result();">결과</button>
-            <div id="result">
+            <button onclick="result();">result</button>
+            <div id="result" title="MariaDB">
                 <!--input result-->
             </div>
         </section>
@@ -44,30 +49,54 @@
         }
         function input_column(){
             var content = document.getElementById('content');
-            var set_column = 3;
+            var set_column = 2;
             
             for(var i=0;i<set_column;i++){
                 var input_tag   =   '<div id='+i+' class="columns">'
-                                +       '<input type="text" id=i'+i+'>'
+                                +       '<input type="text" id=i'+i+' placeholder="column name">'
                                 +   '</div>';
                 content.innerHTML  += input_tag;
             }
         }
         function result(){
-            console.log('d');
             var inputs = document.getElementsByClassName('columns');
             var result_tag = document.getElementById('result');
-            var result = '';
+            var result=[];
 
             for(var i=0;i<inputs.length;i++){
                 var input_id = 'i'+i;
                 var input_value = document.getElementById(input_id).value;
-                result += input_value;
+                result.push(input_value);
             }
+            result.join(', ');
             console.log(result);
-            result_tag.innerHTML += result;
+            var query = return_query();
+            result_tag.innerHTML += query + ' (' + result + ')';
+        }
+        function return_query(){
+            var result;
+            var query = document.getElementById('query');
+            var table_name = document.getElementById('table_name').value;
+            query = query.value.toLowerCase();
+            console.log('query'+query);
+            switch(query){
+                case 'i'://INSERT INTO [table] ([colum1], [column2]...) VALUE ([value1], [value2]...)
+                    result = 'INSERT INTO ' + table_name;
+                    break;
+                case 'u'://UPDATE [table] SET [column] = [value] WHERE...
+                    result = 'UPDATE ' + table_name;
+                    break;
+                case 'd'://DELETE FROM [table] WHERE...
+                    result = 'DELETE FROM ' + table_name;
+                    break;
+            }
+            return result;
         }
     </script>
+
+<!--
+getElementsByClassName
+https://developer.mozilla.org/ko/docs/Web/API/Element/getElementsByClassName-->
 
 </body>
 </html>
