@@ -1,2 +1,2 @@
-# SQL-TestDataGenerator
-Creates sql test data
+# Generator
+* DataGenerator site
