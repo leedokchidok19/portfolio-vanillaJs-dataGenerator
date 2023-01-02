@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>DataGenerator</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
 
-    <b>DataGenerator</b>
-    <hr>
+    <section class="container">
+        <section class="header">
+            <h1>DataGenerator</h1>
+        </section>
+        
+        <section class="content">
+            <div id="tab">
+                <span class="data">
+                    Data
+                </span>
+                <span class="sql">
+                    SQL
+                </span>
+            </div>
+            <div id="view">
+                <input type="number" id="number" placeholder="input number">
+                <select name="create" id="create">
+                    <option value="0">Not selected</option>
+                    <option value="1">name</option>
+                </select>
 
+                <div id="result"></div>
+            </div>
+        </section>
+    </section>
+    
     <script>
         //동일한 문서에 오직 onload는 하나만 존재해야 합니다
         //중복될 경우, 마지막 선언이 실행된다
@@ -20,9 +44,10 @@
             //sql 생성
             //const move_uri= 'SQLGenerator.html';
             
-            location.replace(move_uri);
+            //location.replace(move_uri);
         }
     </script>
+    <script src="js/dataGenerator.js"></script>
 
 </body>
 </html>
