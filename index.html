@@ -22,11 +22,21 @@
                 </span>
             </div>
             <div id="view">
-                <input type="number" id="number" placeholder="input number">
-                <select name="create" id="create">
-                    <option value="0">Not selected</option>
-                    <option value="1">name</option>
-                </select>
+                <div class="genNumber">
+                    <label for="number">
+                        <span>Number of generations</span>
+                    </label>
+                    <input type="number" id="number" placeholder="input number">
+                </div>
+                <div class="genSelect">
+                    <label for="create">
+                        <span>Select option</span>
+                    </label>
+                    <select name="create" id="create">
+                        <option value="0">Not selected</option>
+                        <option value="1">name</option>
+                    </select>
+                </div>
 
                 <div id="result"></div>
             </div>

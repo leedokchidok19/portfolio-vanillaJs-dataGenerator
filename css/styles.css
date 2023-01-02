@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content #tab {
+    display: flex;
+    justify-content: center;
+}
+
+.content #tab > span {
+    padding: 0.5rem;
+}
+
+#result {
+    
+}
