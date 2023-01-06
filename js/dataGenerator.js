@@ -1,5 +1,5 @@
 function typeCheck(){
-    const number = document.getElementById('number').value;
+    const number = document.getElementById('rows').value;
     if(number < 1) return alert(`Input value cannot be less than 1\nUser Input Value: ${number}`);
     return number;
 }

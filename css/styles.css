@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
 }
 
 h1 {
@@ -12,13 +13,28 @@ h1 {
     flex-direction: column;
 }
 
-.content #tab {
+.content #tab,
+.content #view,
+.content #result {
+    padding: 0.25rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .content #tab > span {
     padding: 0.5rem;
+}
+
+#view table,
+#view td {
+    border: 1px solid #000;
+}
+
+#view thead,
+#view tfoot {
+    background-color: #000;
+    color: #fff;
 }
 
 #result {

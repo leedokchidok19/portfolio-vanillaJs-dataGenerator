@@ -9,7 +9,7 @@
 
     <section class="container">
         <section class="header">
-            <h1>DataGenerator</h1>
+            <h1>DataGenerato</h1>
         </section>
         
         <section class="content">
@@ -17,26 +17,98 @@
                 <span class="data">
                     Data
                 </span>
-                <span class="sql">
+                <span class="sql" style="display: none">
                     SQL
                 </span>
             </div>
             <div id="view">
-                <div class="genNumber">
-                    <label for="number">
-                        <span>Number of generations</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Desc</th>
+                            <th>Option</th>
+                        </tr>
+                    </thead>
+                    <caption>Data Generator</caption>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <label for="db">Database</label>
+                            </td>
+                            <td>
+                                <select name="db" id="db">
+                                    <option value="0">Oracle</option>
+                                    <option value="1">MySQL</option>
+                                    <option value="2">Maria</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <label for="dml">DML</label>
+                            </td>
+                            <td>
+                                <select name="dml" id="dml">
+                                    <option value="c">Insert</option>
+                                    <option value="r">Select</option>
+                                    <option value="u">Update</option>
+                                    <option value="d">Delete</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <label for="rows">Rows
                     </label>
-                    <input type="number" id="number" placeholder="input number">
-                </div>
-                <div class="genSelect">
-                    <label for="create">
-                        <span>Select option</span>
-                    </label>
-                    <select name="create" id="create">
-                        <option value="0">Not selected</option>
-                        <option value="1">name</option>
-                    </select>
-                </div>
+                            </td>
+                            <td>
+                                <input type="rows" id="rows" placeholder="input number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <label for="colNm1">ColName(1)</label>
+                            </td>
+                            <td>
+                                <input type="colNm1" id="colNm1" placeholder="input column name">
+                                <select name="type1" id="type1">
+                                    <option value="0">Not selected</option>
+                                    <option value="1">name</option>
+                                    <option value="2">email</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <label for="colNm2">ColName(2)</label>
+                            </td>
+                            <td>
+                                <input type="colNm2" id="colNm2" placeholder="input column name">
+                                <select name="type2" id="type2">
+                                    <option value="0">Not selected</option>
+                                    <option value="1">name</option>
+                                    <option value="2">email</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <button class="addRows">addRows</button>
+                            </th>
+                            <th colspan="2">
+                                <button class="createDML">Create DML</button>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
 
                 <div id="result"></div>
             </div>
